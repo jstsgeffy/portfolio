@@ -127,52 +127,46 @@
     />
   </head>
   <body>
-    <!-- Navigation -->
+    <!-- Scroll Progress Bar -->
+    <div id="progressBar"></div>
+
+    <!-- Navbar -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="https://jstsgeffy.netlify.app/">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a class="navbar-brand fw-bold me-auto" href="#">
           <h3 class="m-0 text-gradient">PORTfolio</h3>
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navMenu"
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navMenu"
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="https://jstsgeffy.netlify.app/#home"
-                >Home</a
-              >
+              <a class="nav-link" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://jstsgeffy.netlify.app/#about"
-                >About</a
-              >
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://jstsgeffy.netlify.app/#projects"
-                >Projects</a
-              >
+              <a class="nav-link" href="#projects">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://jstsgeffy.netlify.app/#timeline"
-                >Experience</a
-              >
+              <a class="nav-link" href="#timeline">Experience</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://jstsgeffy.netlify.app/#news"
-                >News</a
-              >
+              <a class="nav-link" href="#certificates">Certificate</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#tech">Tech</a></li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#news">News</a>
             </li>
           </ul>
-          <button id="darkToggle" class="btn btn-outline-mode ms-3">
-            <i class="bi bi-moon"></i>
-          </button>
         </div>
+
+        <!-- Dark mode -->
+        <button id="darkToggle" class="btn btn-outline-mode ms-auto">
+          <i class="bi bi-moon"></i>
+        </button>
       </div>
     </nav>
 
@@ -346,7 +340,7 @@
 
     <!-- Footer -->
     <footer class="py-5">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
         <div class="d-flex justify-content-center mb-4">
           <a href="https://instagram.com/jstsgeffy/" class="social-icon"
             ><i class="bi bi-instagram"></i
@@ -368,92 +362,22 @@
       </div>
     </footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-whatever"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- ADS -->
-    <script
-      type="text/javascript"
-      src="//pantherinvincible.com/ea/b1/d0/eab1d0220fea6fb3a67f3e23c05bf035.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//pantherinvincible.com/ea/b1/d0/eab1d0220fea6fb3a67f3e23c05bf035.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//pantherinvincible.com/ea/b1/d0/eab1d0220fea6fb3a67f3e23c05bf035.js"
-    ></script>
-
-    <!-- ADS 18+ -->
-    <script
-      type="text/javascript"
-      src="//pantherinvincible.com/1e/fe/02/1efe025f6778fc30b35017ced90f4bd2.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//pantherinvincible.com/1e/fe/02/1efe025f6778fc30b35017ced90f4bd2.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//pantherinvincible.com/1e/fe/02/1efe025f6778fc30b35017ced90f4bd2.js"
-    ></script>
+    <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://jstsgeffy.netlify.app/assets/js/script.js"></script>
     <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+
       // Disable right-click and developer tools
       document.addEventListener("contextmenu", (e) => e.preventDefault());
       document.addEventListener("keydown", (e) => {
         if (e.ctrlKey || e.keyCode === 123) e.preventDefault();
       });
-
-      // Share functions
-      function shareOnFacebook() {
-        const url = encodeURIComponent(window.location.href);
-        const title = encodeURIComponent(document.title);
-        window.open(
-          `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${title}`,
-          "_blank"
-        );
-      }
-
-      function shareOnWhatsApp() {
-        const url = encodeURIComponent(window.location.href);
-        const title = encodeURIComponent(document.title);
-        window.open(`https://wa.me/?text=${title}%20${url}`, "_blank");
-      }
-
-      function shareOnLinkedIn() {
-        const url = encodeURIComponent(window.location.href);
-        const title = encodeURIComponent(document.title);
-        window.open(
-          `https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`,
-          "_blank"
-        );
-      }
-
-      function shareOnTwitter() {
-        const url = encodeURIComponent(window.location.href);
-        const title = encodeURIComponent(document.title);
-        window.open(
-          `https://twitter.com/intent/tweet?text=${title}&url=${url}`,
-          "_blank"
-        );
-      }
-
-      function copyLink() {
-        const url = window.location.href;
-        navigator.clipboard
-          .writeText(url)
-          .then(() => {
-            alert("Link berhasil disalin ke clipboard!");
-          })
-          .catch((err) => {
-            console.error("Gagal menyalin link: ", err);
-          });
-      }
     </script>
   </body>
 </html>
